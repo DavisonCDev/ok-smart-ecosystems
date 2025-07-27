@@ -1,40 +1,72 @@
-.buttonWrapper {
-  position: relative;
-  display: inline-block;
-  transition: transform 0.3s ease;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 40px;
+  margin: 60px 0;
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  transition: opacity 1s ease, transform 1s ease;
 }
 
-.buttonWrapper img {
+.container.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #ffffff;
+  max-width: 800px;
+  line-height: 1.4;
+  text-shadow: 0 0 10px rgba(0, 191, 255, 0.6);
+  opacity: 0;
+  transform: scale(0.9);
+  animation: fadeZoom 1.5s ease forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeZoom {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.buttonWrapper {
+  opacity: 0;
+  transform: translateY(20px) scale(0.9);
+}
+
+.visibleButton {
+  animation: buttonFadeZoom 1s ease forwards;
+}
+
+@keyframes buttonFadeZoom {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.buttonImage {
   width: 100px;
   height: 100px;
   cursor: pointer;
-  transition: transform 0.3s ease;
-  z-index: 2; /* fica acima do brilho */
+  filter: drop-shadow(0 0 10px rgba(0, 191, 255, 0.4));
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-/* Pseudo-elemento para o brilho */
-.buttonWrapper::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  cursor: pointer;
-  width: 120px; /* tamanho do brilho */
-  height: 120px;
-  background: rgba(0, 255, 255, 0.4); /* cor do brilho */
-  border-radius: 50%; /* brilho circular */
-  filter: blur(35px); /* espalha o brilho */
-  opacity: 0; /* começa invisível */
-  transition: opacity 0.4s ease;
-  z-index: 1; /* abaixo da imagem */
-}
-
-/* Hover: aumenta a escala e ativa o brilho */
-.buttonWrapper:hover img {
+.buttonImage:hover {
   transform: scale(1.2);
-}
-
-.buttonWrapper:hover::after {
-  opacity: 1;
+  filter: drop-shadow(0 0 25px rgba(0, 191, 255, 0.9));
 }

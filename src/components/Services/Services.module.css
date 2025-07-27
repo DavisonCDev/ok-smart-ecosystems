@@ -1,0 +1,33 @@
+/* src/components/Services/Services.module.css */
+.services {
+  padding: 60px 20px;
+  background-color: #121826;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #00f5d4;
+}
+
+.grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.card {
+  background-color: #1b2230;
+  padding: 20px;
+  border-radius: 10px;
+  width: 250px;
+  color: #ccc;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px #00f5d4;
+}

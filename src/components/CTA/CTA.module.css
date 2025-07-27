@@ -1,0 +1,28 @@
+/* src/components/CTA/CTA.module.css */
+.cta {
+  background-color: #121826;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.cta h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #00f5d4;
+}
+
+.button {
+  background-color: #00f5d4;
+  color: #0b0f16;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+  background-color: #00c4a7;
+  transform: scale(1.1);
+}

@@ -1,13 +1,13 @@
 .logoContainer {
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
 }
 
 .logo {
-  font-size: 3rem;
+  font-size: 5rem; /* Aumentei bastante (era 3rem) */
   font-weight: bold;
   color: white;
   text-shadow:
@@ -16,23 +16,40 @@
     0 0 15px rgba(0, 0, 0, 0.7),
     0 0 20px rgba(0, 0, 0, 0.6);
   position: relative;
+  transform: scale(1);
+  opacity: 0;
+  animation: logoFadeZoom 1.5s ease forwards;
 }
 
+/* Destaque do texto "Smart" */
 .highlight {
   color: #00bfff;
   text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff;
 }
 
+/* Subtexto "EcoSystems" */
 .ecosystems {
   position: absolute;
-  top: 110%;
-  left: 70%;
+  top: 100%;
+  left: 60%;
   transform: translateX(-50%);
-  font-size: 0.8rem;
+  font-size: 1rem; /* aumentei para combinar com o novo tamanho */
   color: #00ffea;
   text-shadow: 0 0 10px #00ff9d;
   animation: glow 2s ease-in-out infinite alternate;
   white-space: nowrap;
+}
+
+/* Animação de entrada (fade + zoom de 5%) */
+@keyframes logoFadeZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
 }
 
 @keyframes glow {

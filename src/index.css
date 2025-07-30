@@ -11,3 +11,13 @@ body {
   color: white;
   height: 100vh;
 }
+
+/* Deixa todos os blocos, modais e containers com bordas arredondadas */
+div, section, article {
+  border-radius: 15px;
+}
+
+/* Evita que imagens e botões sofram distorção */
+img, button {
+  border-radius: 8px;
+}
